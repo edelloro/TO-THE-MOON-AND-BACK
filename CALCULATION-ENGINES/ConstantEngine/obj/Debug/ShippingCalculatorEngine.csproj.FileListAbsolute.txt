@@ -1,0 +1,4 @@
+C:\Users\ericd\Desktop\SampleCode Job Linked in\ShippingCalculatorEngine\CalculatorEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SampleCode Job Linked in\ShippingCalculatorEngine\CalculatorEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\SampleCode Job Linked in\ShippingCalculatorEngine\CalculatorEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SampleCode Job Linked in\ShippingCalculatorEngine\CalculatorEngine\obj\Debug\CalculatorEngine.pdb

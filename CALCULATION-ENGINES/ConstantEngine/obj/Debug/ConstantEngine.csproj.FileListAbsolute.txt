@@ -1,0 +1,23 @@
+C:\Users\ericd\Desktop\SampleCode Job Linked in\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SampleCode Job Linked in\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\SampleCode Job Linked in\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SampleCode Job Linked in\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\SampleCode Job Linked in\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\obj\Debug\ConstantEngine.csprojResolveAssemblyReference.cache
+C:\Users\ericd\Desktop\JOB APP CODE\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\JOB APP CODE\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\JOB APP CODE\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\JOB APP CODE\PYTHAGORUS\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\JOB APP CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\JOB APP CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\JOB APP CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\ConstantEngine.csprojResolveAssemblyReference.cache
+C:\Users\ericd\Desktop\JOB APP CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\JOB APP CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\SAMPLE CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SAMPLE CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Desktop\SAMPLE CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\ConstantEngine.csprojResolveAssemblyReference.cache
+C:\Users\ericd\Desktop\SAMPLE CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Desktop\SAMPLE CODE\MOONCALCULATOR\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb

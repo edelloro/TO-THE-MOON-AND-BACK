@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+@model MoonAndBackCalculatorApplication.Engine.CalculatorResultModel
+
+
+@using (Html.BeginForm())
+{
+
+<div>
+    
+<div style="text-align:center;width:800px;margin-left:auto;margin-right:auto;">
+            <a href="/">HOME</a>
+            <br />
+            <br />
+            <h2>Moon and Back Calculator - MVC PURE and ASP.NET</h2>
+            <br/>
+            <i>(What is the volume of the moon ???)</i><br />
+            <br />
+            Volume of a Sphere = (4/3) PI R^3<br />
+            <br />
+            Radius of the Moon (1,737km) <br />
+            <br />
+            Expected volume of the moon is (2.1958×10^10 km^3)<br/>
+            <br/>
+            <input type="submit" 
+                   name="calculate" 
+                   value="Calculate" 
+                   id="btnCalculate" 
+                   style="width:100px;" >
+            <br />
+            <br />
+            The value of PI: @Model.PI<br />
+            Time to calculate in milliseconds: @Model.CalculationTime<br />
+            Moon Volume is : @Model.MoonVolume km^3 <br/>
+            <br>
+            <br>
+        </div>
+
+</div>
+
+}

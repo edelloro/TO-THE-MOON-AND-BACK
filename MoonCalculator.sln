@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstantEngine", "CALCULATION-ENGINES\ConstantEngine\ConstantEngine.csproj", "{7D49C273-15E2-453A-A63A-43A98CFEF799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "CONSUMERS AND SERVICES\MVC-ASP.NET\MVC.csproj", "{52539535-5811-4513-B3AA-8D500E5907D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC-SPA-ANGULARJS", "CONSUMERS AND SERVICES\MVC-SPA-ANGULARJS-WEBAPI2\MVC-SPA-ANGULARJS.csproj", "{87ABDA6D-F225-49A2-8FB3-ABC3EA775EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC-SPA-JQUERY", "CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\MVC-SPA-JQUERY.csproj", "{DE55C49C-B560-4EEF-91E9-8E01E3346844}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WEBFORM-SPA-JQUERY-WEBSERVICE", "http://localhost:2002", "{5A4F6D59-8EFF-4E6C-AD47-B369F0554EFA}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{7d49c273-15e2-453a-a63a-43a98cfef799}|CalculatorEngine.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2002"
+		Debug.AspNetCompiler.PhysicalPath = "CONSUMERS AND SERVICES\WEBFORM-SPA-JQUERY-WEBSERVICE\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2002\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2002"
+		Release.AspNetCompiler.PhysicalPath = "CONSUMERS AND SERVICES\WEBFORM-SPA-JQUERY-WEBSERVICE\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2002\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "CONSUMERS AND SERVICES\WEBFORM-SPA-JQUERY-WEBSERVICE\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{47FF8959-4718-4C6F-9074-01D3B4FAB5F4}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WEBFORM-ASP.NET", "http://localhost:19026", "{38B9984B-7D7B-41B7-96B7-922FC15D1FED}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_19026"
+		Debug.AspNetCompiler.PhysicalPath = "CONSUMERS AND SERVICES\WEBFORM-ASP.NET\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19026\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_19026"
+		Release.AspNetCompiler.PhysicalPath = "CONSUMERS AND SERVICES\WEBFORM-ASP.NET\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_19026\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "CONSUMERS AND SERVICES\WEBFORM-ASP.NET\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\UnitTestProject1\TEST.csproj", "{9AFC0654-066D-4C02-8A4B-D192B0FFEF3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D49C273-15E2-453A-A63A-43A98CFEF799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D49C273-15E2-453A-A63A-43A98CFEF799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D49C273-15E2-453A-A63A-43A98CFEF799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D49C273-15E2-453A-A63A-43A98CFEF799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52539535-5811-4513-B3AA-8D500E5907D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52539535-5811-4513-B3AA-8D500E5907D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52539535-5811-4513-B3AA-8D500E5907D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52539535-5811-4513-B3AA-8D500E5907D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87ABDA6D-F225-49A2-8FB3-ABC3EA775EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87ABDA6D-F225-49A2-8FB3-ABC3EA775EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87ABDA6D-F225-49A2-8FB3-ABC3EA775EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87ABDA6D-F225-49A2-8FB3-ABC3EA775EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE55C49C-B560-4EEF-91E9-8E01E3346844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE55C49C-B560-4EEF-91E9-8E01E3346844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE55C49C-B560-4EEF-91E9-8E01E3346844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE55C49C-B560-4EEF-91E9-8E01E3346844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A4F6D59-8EFF-4E6C-AD47-B369F0554EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4F6D59-8EFF-4E6C-AD47-B369F0554EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4F6D59-8EFF-4E6C-AD47-B369F0554EFA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4F6D59-8EFF-4E6C-AD47-B369F0554EFA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{38B9984B-7D7B-41B7-96B7-922FC15D1FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B9984B-7D7B-41B7-96B7-922FC15D1FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B9984B-7D7B-41B7-96B7-922FC15D1FED}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B9984B-7D7B-41B7-96B7-922FC15D1FED}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9AFC0654-066D-4C02-8A4B-D192B0FFEF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AFC0654-066D-4C02-8A4B-D192B0FFEF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AFC0654-066D-4C02-8A4B-D192B0FFEF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFC0654-066D-4C02-8A4B-D192B0FFEF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

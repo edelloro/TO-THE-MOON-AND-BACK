@@ -1,0 +1,7 @@
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\TEST.csprojResolveAssemblyReference.cache

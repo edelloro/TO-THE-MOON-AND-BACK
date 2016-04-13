@@ -1,0 +1,67 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MoonAndBackCalculatorApplication.Engine;
+
+namespace UnitTestProjectEngineCalculator
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestMethod_MonteCarlo_1000()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("montecarlo");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate(1000);
+            Assert.AreEqual(rc.PI, 3.14, 0.10, "INVALID MONTECARLO CALCULATION");
+        }
+
+
+        [TestMethod]
+        public void TestMethod_MonteCarlo_10000()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("montecarlo");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate(10000);
+            Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID MONTECARLO CALCULATION");
+        }
+
+
+        [TestMethod]
+        public void TestMethod_DotNet()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("dotnet");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate();
+            Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID DOTNET CALCULATION");
+        }
+
+        [TestMethod]
+        public void TestMethod_EgyptianPyramid()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("egyptianpyramid");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate();
+            Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID EGYPT CALCULATION");
+        }
+
+        [TestMethod]
+        public void TestMethod_GregoryLeibniz_HundredMillionCalc()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("gregoryleibniz");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate(1000000*10);
+            Assert.AreEqual(rc.PI, 3.14, 0.005, "INVALID GREGORY-LEIBNIZ CALCULATION");
+        }    
+    }
+}

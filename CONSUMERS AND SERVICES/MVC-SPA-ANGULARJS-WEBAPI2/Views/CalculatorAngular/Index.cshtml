@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!-- COULD BE BUNDLED -->
+<script src="~/Scripts/angular.min.js"></script>
+
+<script>
+
+   var myapp = angular.module('myApp', []);
+
+    myapp.controller('control', function ($scope, $http) {
+    $scope.PI = "";
+    $scope.CalculationTime = "";
+    $scope.CallWebService = function () {
+    $http({
+            method: 'GET',
+            url: "/api/CalculatorWEBAPI2/Calculate",
+            dataType: 'json',
+            data: '',
+            headers: { "Content-Type": "application/json" }
+    }).success(function (response) {
+                $scope.PI = response.PI;
+                $scope.CalculationTime = response.CalculationTime;
+            }).error(function (data, status, headers, config) {
+                $scope.PI = "ERROR";
+                $scope.CalculationTime = "ERROR ENCOUNTERED";
+            });
+        };
+    }); //CONTROLLER
+</script>
+
+
+
+
+<div ng-app="myApp" ng-controller="control" style="text-align:center;width:800px;margin-left:auto;margin-right:auto;">
+    <a href="/">HOME</a>
+    <br />
+    <br />
+    <br />
+    <h2>Moon and Back Calculator - AngularJS and WEBAPI2</h2>
+    <i>(What is the volume of the moon ???)</i><br />
+    <br />
+    Volume of a Sphere = (4/3) PI R^3<br />
+    <br />
+    Radius of the Moon (1,737km) <br />
+    <br />
+    <input type="button" data-ng-click="CallWebService();" value="calculate" id="btnCalculate" style="width:100px;"><br/>
+    <br/>
+    <br/>
+    The value of to use is PI: {{ PI }}<br />
+    Time to complete task in milliseconds: {{ CalculationTime }}
+    <br>
+    <br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

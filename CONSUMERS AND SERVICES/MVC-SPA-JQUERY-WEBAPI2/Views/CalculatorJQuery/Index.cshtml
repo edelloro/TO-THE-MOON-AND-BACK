@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+
+<!-- COULD BE BUNDLED -->
+<script src="scripts/jquery-1.10.2.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        //BUTTON CLICK TO CALL THE WEBAPI2 SERVICE
+        $(":button").click(function () {
+
+          
+            var urlRequest = "/api/CalculatorWEBAPI2/";
+
+            urlRequest = urlRequest + "Calculate" ;
+
+            $.ajax({
+                url: urlRequest,
+                type: "GET",
+                dataType: 'json',
+                success: function (result) {
+                    $("#divResult").html("PI: " + result.PI + "<br/>" +
+                                         "Elapsed time in milliseconds: (" + result.CalculationTime + ")");
+
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    $("#divResult").html(err.Message)
+                }
+            });
+        });
+    });
+</script>
+
+
+<div style="text-align:center;width:800px;margin-left:auto;margin-right:auto;" >
+   
+    <a href="/">HOME</a>
+
+    <br />
+    <br />
+
+    <h2>Moon and Back Calculator - JQuery and WEBAPI2</h2>
+    <i>(What is the volume of the moon ???)</i><br />
+    <br />
+    Volume of a Sphere = (4/3) PI R^3<br/>
+    <br />
+    Radius of the Moon (1,737km)<br/>
+    <br/>
+    <input type="button" value="Calculate" id="btnCalculate" style="width:100px;">
+    <br />
+    <br />
+    <div id="divResult" style="text-align:left;width:300px;margin-left:auto;margin-right:auto;" ></div><br /><br>
+
+</div>
