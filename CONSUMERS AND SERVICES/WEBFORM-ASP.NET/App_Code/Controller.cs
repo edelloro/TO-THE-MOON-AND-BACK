@@ -39,17 +39,7 @@ namespace MoonAndBackCalculatorApplication.Controllers
             // HTML VALIDATION BEFORE SEND
             // WEBAPI2 VALIDATION
 
-
-            //%ToDo
-
-
-            //STRATEGY DESIGN PATTERN FOR CHOOSING THE constant ENGINE
-            //CAN MODIFY CLASSES TO ACCOMODATE BUSINESS RULE MODIFICATIONS
-
-            //1. IF WEIGHT > 50 REJECTED_ENGINE [OTHERWISE]
-            //2. IF WEIGHT > 10 WEIGHT_CALCULATOR_ENGINE [OTHERWISE]
-            //3. USE VOLUME ENGINE
-
+         
             constantModel model = new constantModel();
 
             IconstantEngine engine = null;
@@ -60,8 +50,7 @@ namespace MoonAndBackCalculatorApplication.Controllers
 
             rc = engine.Calculate();
 
-            return new CalculatorResultModel(rc.PI,
-                                             rc.CalculationTime);
+            return new CalculatorResultModel(rc.PI, rc.CalculationTime);
         }
 
     }

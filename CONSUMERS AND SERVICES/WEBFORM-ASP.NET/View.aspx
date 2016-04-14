@@ -43,8 +43,6 @@
 
 <div style="text-align:center;width:800px;margin-left:auto;margin-right:auto;" >
    
-    <a href="/">HOME</a>
-
     <br />
     <br />
 

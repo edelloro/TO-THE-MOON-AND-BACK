@@ -53,6 +53,19 @@ namespace UnitTestProjectEngineCalculator
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID EGYPT CALCULATION");
         }
 
+
+        [TestMethod]
+        public void TestMethod_ArcTangent()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine("arctangent");
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate();
+            Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID ARCTANGENT CALCULATION");
+        }
+
+
         [TestMethod]
         public void TestMethod_GregoryLeibniz_HundredMillionCalc()
         {

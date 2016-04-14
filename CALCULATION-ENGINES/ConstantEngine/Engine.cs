@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Configuration;
 
-//Bulk parameters
+//   Bulk parameters
 
 //                                   Moon         Earth      Ratio (Moon/Earth)
-//Mass (1024 kg)                    0.07346       5.9724     0.0123    
-//Volume (1010 km3)                 2.1958      108.321      0.0203
-//Equatorial radius (km)	    1738.1        6378.1    0.2725      
-//Polar radius (km)                 1736.0        6356.8    0.2731
-//Volumetric mean radius (km)       1737.1        6371.0    0.2727
-//Ellipticity (Flattening)          0.0012        0.00335    0.36    
-//Mean density (kg/m3)              3344          5514      0.606      
-//Surface gravity (m/s2)            1.62          9.80       0.165    
-//Surface acceleration (m/s2)       1.62          9.78       0.166    
-//Escape velocity (km/s)            2.38         11.2        0.213    
-//GM (x 106 km3/s2)                 0.00490       0.39860    0.0123 
-//Bond albedo                       0.11          0.306      0.360
-//Visual geometric albedo           0.12          0.367      0.330    
-//Visual magnitude V(1,0)          +0.21         -3.86          -
-//Solar irradiance (W/m2)            1361.0        1361.0    1.000      
-//Black-body temperature (K)          270.4         254.0    1.065      
-//Topographic range (km)               20            20      1.000      
-//Moment of inertia (I/MR2)         0.394         0.3308     1.191
-//J2 (x 10-6)                     202.7        1082.63        0.187  
+//   Mass (1024 kg)                    0.07346       5.9724     0.0123    
+//   Volume (1010 km3)                 2.1958      108.321      0.0203
+//   Equatorial radius (km)	    1738.1        6378.1    0.2725      
+//   Polar radius (km)                 1736.0        6356.8    0.2731
+//   Volumetric mean radius (km)       1737.1        6371.0    0.2727
+//   Ellipticity (Flattening)          0.0012        0.00335    0.36    
+//   Mean density (kg/m3)              3344          5514      0.606      
+//   Surface gravity (m/s2)            1.62          9.80       0.165    
+//   Surface acceleration (m/s2)       1.62          9.78       0.166    
+//   Escape velocity (km/s)            2.38         11.2        0.213    
+//   GM (x 106 km3/s2)                 0.00490       0.39860    0.0123 
+//   Bond albedo                       0.11          0.306      0.360
+//   Visual geometric albedo           0.12          0.367      0.330    
+//   Visual magnitude V(1,0)          +0.21         -3.86          -
+//   Solar irradiance (W/m2)            1361.0        1361.0    1.000      
+//   Black-body temperature (K)          270.4         254.0    1.065      
+//   Topographic range (km)               20            20      1.000      
+//   Moment of inertia (I/MR2)         0.394         0.3308     1.191
+//   J2 (x 10-6)                     202.7        1082.63        0.187  
 
 
 namespace MoonAndBackCalculatorApplication.Engine
@@ -61,11 +61,13 @@ namespace MoonAndBackCalculatorApplication.Engine
     }
 
 
-    // PI CAN BE REPRESENTED AS THE FOLLOWING FRACTIONS
-    // (22/7) (333/106) (355/113) (52163/16604) (103993/33102) (245850922/78256779)
-    // PYRAMID ENGINEERS DOING MANUAL CALCULATIONS SOMETIMES USED THESE FRACTIONS
     public class EgyptianPyramidEngine : IconstantEngine
     {
+        // PI CAN BE REPRESENTED AS THE FOLLOWING FRACTIONS
+        // (22/7) (333/106) (355/113) (52163/16604) (103993/33102) (245850922/78256779)
+        // PYRAMID ENGINEERS DOING MANUAL CALCULATIONS SOMETIMES USED THESE FRACTIONS
+
+        
         public CalculatorResultModel Calculate()
         {
             Stopwatch watch = Stopwatch.StartNew();
@@ -128,16 +130,58 @@ namespace MoonAndBackCalculatorApplication.Engine
 
 
 
+
+    public class ArcTangentEngine : IconstantEngine
+    {
+        // ARCTANGENT ENGINE
+        // .
+        // . .
+        // .   .
+        // .     .
+        // .       .
+        // .         .
+        // .           .
+        // .             .
+        // .               .
+        // . . . . . . . . . .
+        //
+        // You have a right angled triangle. 
+        // What do the two non 90 degree angles add up to? 
+        // 90 degrees. 90 degrees obviously = pi/2 radians. 
+        // Arctan(x) finds one of the angles, 
+        // Arctan(1/x) finds the other. 
+        //
+        // Reference 
+        // https://www.physicsforums.com/threads/most-elegant-proof-of-arctan-x-arctan-1-x.143695/
+        // Look at the 3-4-5 right triangle. The two acute angles add to pi/2, i.e. to 90 degrees. One of the acute angles is arctan(3/4). The other acute angle is arctan(4/3). Done. 
+        // PI = 4 ARTAN (1)
+
+        public CalculatorResultModel Calculate()
+        {
+            Stopwatch watch = Stopwatch.StartNew();
+            double rcode = 4.0 * System.Math.Atan( 1 ) ;
+            watch.Stop();
+            double rtime = watch.ElapsedMilliseconds;
+            return new CalculatorResultModel(rcode, rtime);
+        }
+        //THE ITERATION FIELD IS IGNORED
+        public CalculatorResultModel Calculate(Int64 precision)
+        {
+            return this.Calculate();
+        }
+
+    }
+
     public class MonteCarloEngine : IconstantEngine
     {
-        //THE MONTE CARLO METHOD USES A GAMBLER ENGINE AND RANDOMLY PUTS POINTS
-        //INSIDE A SQUARE WITH THE LARGEST CIRCLE POSSIBLE INSIDE IT AS A MODEL
-
-        //INSTEAD WE WILL USE A SIEVE OF POINTS AND COUNT THOSE INSIDE AND OUTSIDE THE CIRCLE
-
-        //ENCLOSE A CIRCLE INSIDE A SQUARE WE WILL CHECK IF A SIEVE OF POINTS
-        //IS EITHER INSIDE THE CIRCLE OR OUTSIDE THE CIRCLE THEN CALCULATE PI
-        //FROM THE RATIO (THIS COULD BE DONE WITH RANDOM X AND Y AS WELL) 
+        // THE MONTE CARLO METHOD USES A GAMBLER ENGINE AND RANDOMLY PUTS POINTS
+        // INSIDE A SQUARE WITH THE LARGEST CIRCLE POSSIBLE INSIDE IT AS A MODEL
+           
+        // INSTEAD WE WILL USE A SIEVE OF POINTS AND COUNT THOSE INSIDE AND OUTSIDE THE CIRCLE
+           
+        // ENCLOSE A CIRCLE INSIDE A SQUARE WE WILL CHECK IF A SIEVE OF POINTS
+        // IS EITHER INSIDE THE CIRCLE OR OUTSIDE THE CIRCLE THEN CALCULATE PI
+        // FROM THE RATIO (THIS COULD BE DONE WITH RANDOM X AND Y AS WELL) 
 
         // CIRCLE OF RADIUS R INSIDE A SQUARE OF LENGTH 2 R
 
@@ -152,11 +196,9 @@ namespace MoonAndBackCalculatorApplication.Engine
         // OF A SQUARE WITH THE LARGEST CIRCLE IT CAN CONTAIN
 
 
-        //THE ITERATION FIELD IS IGNORED
+        // THE ITERATION FIELD IS RELEVANT
         public CalculatorResultModel Calculate(Int64 precision)
         {
-           
-
             Stopwatch watch = Stopwatch.StartNew();
             double pi_approx = 0d;
             double radius = precision;
@@ -178,7 +220,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         }
 
         public CalculatorResultModel Calculate() {
-         return this.Calculate(1000);
+          return this.Calculate(1000);
          }
    
     }
@@ -246,7 +288,7 @@ namespace MoonAndBackCalculatorApplication.Engine
     {
 
 
-        //The requstor of the engine used determines the algorithm used
+        //The requestor of the engine used determines the algorithm used
         //strategy design pattern
         public IconstantEngine GetconstantEngine()
         {
@@ -258,7 +300,11 @@ namespace MoonAndBackCalculatorApplication.Engine
          public IconstantEngine GetconstantEngine(string enginetype)
         {
             IconstantEngine constantEngine = null;
-            switch (enginetype) { 
+            switch (enginetype) {
+ 
+                case "arctangent" :
+                    constantEngine = new ArcTangentEngine();
+                    break;
                 case "dotnet" : 
                     constantEngine = new DotNetEngine();
                     break;

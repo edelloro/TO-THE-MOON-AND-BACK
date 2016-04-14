@@ -63,12 +63,6 @@
     <div id="divResult" style="text-align:left;width:300px;margin-left:auto;margin-right:auto;" ></div><br /><br>
 
 </div>
-
-
-
-
-
-
 </form>
 </body>
 </html>
