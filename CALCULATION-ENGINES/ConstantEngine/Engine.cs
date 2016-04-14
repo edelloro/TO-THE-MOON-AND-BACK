@@ -36,7 +36,8 @@ namespace MoonAndBackCalculatorApplication.Engine
          DotNetEngine  ,  
          EgyptianPyramidEngine,
          GregoryLeibnizEngine,
-         MonteCarloEngine
+         MonteCarlo2DEngine,
+         MonteCarlo3DEngine
     }
 
     // STRATEGY DESIGN PATTERN FREIGHT CALCULATION
@@ -231,8 +232,11 @@ namespace MoonAndBackCalculatorApplication.Engine
 
         //CONSTRUCTOR
 
-        //CACHE RADIUS, INSIDE    , OUTSIDE  , COMPLETED_CALC , CALC_DURATION 
-        // 10,000.0   , 314159017 , 85840983 ,
+
+        //CACHE RADIUS, INSIDE      , OUTSIDE    , COMPLETED_CALC , CALC_DURATION 
+        //   10000.0d , 314159017   , 85840983   ,
+        //  100000.0d , 31415925413 , 8584074587
+              
         public MonteCarloCalculate_Worker(double radius)
         {
             //---------------------------------------
@@ -275,10 +279,116 @@ namespace MoonAndBackCalculatorApplication.Engine
             }
         }
     }
+    }
+
+
+
+
+
+
+
+    public class MonteCarloCubicEngine : IconstantEngine
+    {
+        // THIS IS AN EXTENSION OF THE PREVIOUS MONTE CARLO ENGINE
+        // INSTEAD OF USING A 2D MODEL WE WILL USE A 3D MODEL
+        // OF A SPHERE RADIUS R INSIDE A CUBE OR LENGTH 2R
+
+        // WE WILL USE A SIEVE OF POINTS AGAIN AND COUNT THOSE INSIDE AND OUTSIDE THE CIRCLE
+
+        // ENCLOSE A SPHERE INSIDE A CUBE WE WILL CHECK IF A SIEVE OF POINTS
+        // IS EITHER INSIDE THE SPHERE OR OUTSIDE THE SPHERE THEN CALCULATE PI
+        // FROM THE RATIO (THIS COULD BE DONE WITH RANDOM X AND Y AS WELL) 
+
+        // SPHERE OF RADIUS R INSIDE A CUBE OF SIDE LENGTH 2 R
+
+        // SPHERE AREA = (4/3) * PI  R^3   = (4/3) PI R^3
+        // CUBE AREA   = 4 * R^2 * 2R      =    8     R^3
+        // THEREFORE:
+        // SPHERE AREA / CUBE AREA = PI / 6
+        // THEREFORE:
+        // PI = RATIO * 6
+
+        // PI IS 6 TIMES THE RATIO OF THE AREA INSIDE OUTSIDE THE SPHERE 
+        // TO TOTAL AREA OF A CUBE WITH THE LARGEST CIRCLE IT CAN CONTAIN
+
+
+        // THE ITERATION FIELD IS RELEVANT
+        public CalculatorResultModel Calculate(Int64 precision)
+        {
+            Stopwatch watch = Stopwatch.StartNew();
+            double pi_approx = 0d;
+            double radius = precision;
+
+            Int64 inside = 0;
+            Int64 outside = 0;
+
+            MonteCarloCubicCalculate_Worker work = new MonteCarloCubicCalculate_Worker(radius);
+
+            inside = work.inside;
+            outside = work.outside;
+
+            double ratioInOut = ((double)inside / (double)(outside + inside));
+
+            pi_approx = 6.0d * (ratioInOut);
+            watch.Stop();
+            double rtime = watch.ElapsedMilliseconds;
+            return new CalculatorResultModel(pi_approx, rtime);
+        }
+
+        //BECAUSE 3D CALCULATIONS ITERATIONS MUST BE SMALLER
+        public CalculatorResultModel Calculate()
+        {
+            return this.Calculate(100);
+        }
+
+        class MonteCarloCubicCalculate_Worker
+        {
+            private Int64 _inside;
+            private Int64 _outside;
+
+            public Int64 inside { get { return _inside; } }
+            public Int64 outside { get { return _outside; } }
+
+            //CONSTRUCTOR
+
+            public MonteCarloCubicCalculate_Worker(double radius)
+            {
+               
+                double radiusTimesTwo = radius * 2;
+
+                for (int x = 0; x < radiusTimesTwo; x++)
+                {
+                    for (int y = 0; y < radiusTimesTwo; y++)
+                    {
+                        for (int z = 0; z < radiusTimesTwo; z++)
+                        {
+                            //%ToDo
+                            //OPTIMIZE:
+                            //X^2 IS POSITIVE ABS NOT REQUIRED
+                            if (Math.Sqrt(
+                                (Math.Pow(Math.Abs(radius - x), 2) +
+                                 Math.Pow(Math.Abs(radius - y), 2) + 
+                                 Math.Pow(Math.Abs(radius - z), 2)
+                                 ))
+                                 < radius)
+                            { _inside++; }
+                            else
+                            { _outside++; }
+                        }
+                    }
+                }
+            }
+        }
 
 
     }
-   
+
+
+
+
+
+
+
     public class constantModel
     {
         // THE REQUESTOR OF THE ENGINE USED DETERMINES THE ALGORITHM 
@@ -312,8 +422,12 @@ namespace MoonAndBackCalculatorApplication.Engine
                     constantEngine = new GregoryLeibnizEngine();
                     break;
 
-                case PI_ENGINE_TYPE.MonteCarloEngine:
+                case PI_ENGINE_TYPE.MonteCarlo2DEngine:
                     constantEngine = new MonteCarloEngine();
+                    break;
+
+                case PI_ENGINE_TYPE.MonteCarlo3DEngine:
+                    constantEngine = new MonteCarloCubicEngine();
                     break;
            
                 default:

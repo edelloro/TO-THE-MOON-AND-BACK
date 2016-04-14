@@ -7,31 +7,40 @@ using MoonAndBackCalculatorApplication.Engine;
 namespace UnitTestProjectEngineCalculator
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest_CalculatePI
     {
         [TestMethod]
         public void TestMethod_MonteCarlo_1000()
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarloEngine);
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo2DEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate(1000);
             Assert.AreEqual(rc.PI, 3.14, 0.10, "INVALID MONTECARLO CALCULATION");
         }
-
 
         [TestMethod]
         public void TestMethod_MonteCarlo_10000()
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarloEngine);
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo2DEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate(10000);
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID MONTECARLO CALCULATION");
         }
 
+        [TestMethod]
+        public void TestMethod_MonteCarlo3D_100()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo3DEngine);
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate(100);
+            Assert.AreEqual(rc.PI, 3.141, 0.005, "INVALID MONTECARLO 3D CALCULATION");
+        }
 
         [TestMethod]
         public void TestMethod_DotNet()
