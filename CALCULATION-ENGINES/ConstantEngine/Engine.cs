@@ -30,6 +30,17 @@ using System.Configuration;
 namespace MoonAndBackCalculatorApplication.Engine
 {
 
+    public enum PI_ENGINE_TYPE
+    {
+         ArcTangentEngine,
+         DotNetEngine  ,  
+         EgyptianPyramidEngine,
+         GregoryLeibnizEngine,
+         MonteCarloEngine
+    }
+
+
+
     // STRATEGY DESIGN PATTERN FREIGHT CALCULATION
     public interface IconstantEngine
     {
@@ -37,8 +48,6 @@ namespace MoonAndBackCalculatorApplication.Engine
         CalculatorResultModel Calculate(Int64 precision);
     }
 
-
-    //BUILT IN CONSTANT FOR DOT NET
     public class DotNetEngine : IconstantEngine
     {
         public CalculatorResultModel Calculate()
@@ -55,11 +64,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         {
             return this.Calculate();
         }
-       
-
-
     }
-
 
     public class EgyptianPyramidEngine : IconstantEngine
     {
@@ -82,8 +87,6 @@ namespace MoonAndBackCalculatorApplication.Engine
             return this.Calculate();
         }
     }
-
-
 
     public class GregoryLeibnizEngine : IconstantEngine
     {
@@ -127,9 +130,6 @@ namespace MoonAndBackCalculatorApplication.Engine
             return new CalculatorResultModel(pi_approx, rtime);
         }
     }
-
-
-
 
     public class ArcTangentEngine : IconstantEngine
     {
@@ -206,7 +206,7 @@ namespace MoonAndBackCalculatorApplication.Engine
             Int64 inside = 0;
             Int64 outside = 0;
 
-            CalculateWorker work = new CalculateWorker(radius);
+            MonteCarloCalculate_Worker work = new MonteCarloCalculate_Worker(radius);
 
             inside = work.inside;
             outside = work.outside;
@@ -223,10 +223,7 @@ namespace MoonAndBackCalculatorApplication.Engine
           return this.Calculate(1000);
          }
    
-    }
-   
-
-    class CalculateWorker
+          class MonteCarloCalculate_Worker
     {
         private Int64 _inside;
         private Int64 _outside;
@@ -238,7 +235,7 @@ namespace MoonAndBackCalculatorApplication.Engine
 
         //CACHE RADIUS, INSIDE    , OUTSIDE  , COMPLETED_CALC , CALC_DURATION 
         // 10,000.0   , 314159017 , 85840983 ,
-        public CalculateWorker(double radius)
+        public MonteCarloCalculate_Worker(double radius)
         {
             //---------------------------------------
             //HARD CODED CACHING DETERMINISTIC RESULT
@@ -282,14 +279,15 @@ namespace MoonAndBackCalculatorApplication.Engine
     }
 
 
-
-
+    }
+   
     public class constantModel
     {
 
 
-        //The requestor of the engine used determines the algorithm used
-        //strategy design pattern
+        // THE REQUESTOR OF THE ENGINE USED DETERMINES THE ALGORITHM 
+        // USED STRATEGY DESIGN PATTERN
+
         public IconstantEngine GetconstantEngine()
         {
             IconstantEngine constantEngine = null;
@@ -297,33 +295,39 @@ namespace MoonAndBackCalculatorApplication.Engine
             return constantEngine;
         }
         
-         public IconstantEngine GetconstantEngine(string enginetype)
+         public IconstantEngine GetconstantEngine(PI_ENGINE_TYPE enginetype)
         {
             IconstantEngine constantEngine = null;
             switch (enginetype) {
  
-                case "arctangent" :
+                case PI_ENGINE_TYPE.ArcTangentEngine :
                     constantEngine = new ArcTangentEngine();
                     break;
-                case "dotnet" : 
+
+                case PI_ENGINE_TYPE.DotNetEngine : 
                     constantEngine = new DotNetEngine();
                     break;
-                case "montecarlo": 
-                    constantEngine = new MonteCarloEngine();
-                    break;
-                case "gregoryleibniz": 
-                    constantEngine = new GregoryLeibnizEngine();
-                    break;
-                case "egyptianpyramid":
+
+                 case PI_ENGINE_TYPE.EgyptianPyramidEngine:
                     constantEngine = new EgyptianPyramidEngine();
                     break;
-                default:
+
+                case PI_ENGINE_TYPE.GregoryLeibnizEngine: 
+                    constantEngine = new GregoryLeibnizEngine();
+                    break;
+
+                case PI_ENGINE_TYPE.MonteCarloEngine:
                     constantEngine = new MonteCarloEngine();
+                    break;
+           
+                default:
+                    constantEngine = new DotNetEngine();
                     break;
             }
 
             return constantEngine;
         }
     }
+
 }
 
