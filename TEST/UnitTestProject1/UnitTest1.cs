@@ -12,7 +12,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("montecarlo");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarloEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate(1000);
             Assert.AreEqual(rc.PI, 3.14, 0.10, "INVALID MONTECARLO CALCULATION");
@@ -24,7 +24,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("montecarlo");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarloEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate(10000);
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID MONTECARLO CALCULATION");
@@ -36,7 +36,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("dotnet");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.DotNetEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate();
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID DOTNET CALCULATION");
@@ -47,7 +47,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("egyptianpyramid");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.EgyptianPyramidEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate();
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID EGYPT CALCULATION");
@@ -59,7 +59,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("arctangent");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.ArcTangentEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate();
             Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID ARCTANGENT CALCULATION");
@@ -71,7 +71,7 @@ namespace UnitTestProjectEngineCalculator
         {
             constantModel model = new constantModel();
             IconstantEngine engine = null;
-            engine = model.GetconstantEngine("gregoryleibniz");
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.GregoryLeibnizEngine);
             CalculatorResultModel rc = null;
             rc = engine.Calculate(1000000*10);
             Assert.AreEqual(rc.PI, 3.14, 0.005, "INVALID GREGORY-LEIBNIZ CALCULATION");

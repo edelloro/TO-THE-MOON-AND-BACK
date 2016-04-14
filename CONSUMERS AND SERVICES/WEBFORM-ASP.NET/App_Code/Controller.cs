@@ -41,16 +41,12 @@ namespace MoonAndBackCalculatorApplication.Controllers
 
          
             constantModel model = new constantModel();
-
             IconstantEngine engine = null;
-
             engine = model.GetconstantEngine();
-
             CalculatorResultModel rc = null;
-
             rc = engine.Calculate();
-
             return new CalculatorResultModel(rc.PI, rc.CalculationTime);
+
         }
 
     }
