@@ -12,19 +12,17 @@ namespace MoonAndBackCalculatorApplication.Controllers
     public class CalculatorController : Controller
     {
         // GET: Calculator
-        public ActionResult Index(string calculate)
+        public ActionResult Index(string btnCalculate)
         
         {
-            string ERIC = calculate;
-
-            if (calculate == "Calculate") { 
+           
+            if (btnCalculate == "Calculate") { 
                 constantModel model = new constantModel() ;
                 IconstantEngine engine = null;
                 engine = model.GetconstantEngine();
                 CalculatorResultModel rc = null;
                 rc = engine.Calculate();
-                return View(new CalculatorResultModel(rc.PI, 
-                                                      rc.CalculationTime));
+                return View(new CalculatorResultModel(rc.PI, rc.CalculationTime));
             }
             else
             {

@@ -8,14 +8,14 @@ using System.Configuration;
 //                                   Moon         Earth      Ratio (Moon/Earth)
 //   Mass (1024 kg)                    0.07346       5.9724     0.0123    
 //   Volume (1010 km3)                 2.1958      108.321      0.0203
-//   Equatorial radius (km)	    1738.1        6378.1    0.2725      
+//   Equatorial radius (km)	           1738.1        6378.1    0.2725      
 //   Polar radius (km)                 1736.0        6356.8    0.2731
 //   Volumetric mean radius (km)       1737.1        6371.0    0.2727
 //   Ellipticity (Flattening)          0.0012        0.00335    0.36    
 //   Mean density (kg/m3)              3344          5514      0.606      
 //   Surface gravity (m/s2)            1.62          9.80       0.165    
 //   Surface acceleration (m/s2)       1.62          9.78       0.166    
-//   Escape velocity (km/s)            2.38         11.2        0.213    
+//   Escape velocity (km/s)            2.38          11.2        0.213    
 //   GM (x 106 km3/s2)                 0.00490       0.39860    0.0123 
 //   Bond albedo                       0.11          0.306      0.360
 //   Visual geometric albedo           0.12          0.367      0.330    
@@ -38,8 +38,6 @@ namespace MoonAndBackCalculatorApplication.Engine
          GregoryLeibnizEngine,
          MonteCarloEngine
     }
-
-
 
     // STRATEGY DESIGN PATTERN FREIGHT CALCULATION
     public interface IconstantEngine
@@ -283,15 +281,13 @@ namespace MoonAndBackCalculatorApplication.Engine
    
     public class constantModel
     {
-
-
         // THE REQUESTOR OF THE ENGINE USED DETERMINES THE ALGORITHM 
         // USED STRATEGY DESIGN PATTERN
 
         public IconstantEngine GetconstantEngine()
         {
             IconstantEngine constantEngine = null;
-            constantEngine = new MonteCarloEngine();
+            constantEngine = new DotNetEngine();
             return constantEngine;
         }
         
@@ -324,10 +320,8 @@ namespace MoonAndBackCalculatorApplication.Engine
                     constantEngine = new DotNetEngine();
                     break;
             }
-
             return constantEngine;
         }
     }
-
 }
 
