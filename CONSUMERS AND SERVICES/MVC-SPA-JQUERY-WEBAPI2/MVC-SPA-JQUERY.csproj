@@ -210,9 +210,9 @@
     <Content Include="Views\CalculatorJQuery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\ConstantEngine.csproj">
+    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\CONSTANTENGINE.csproj">
       <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
-      <Name>ConstantEngine</Name>
+      <Name>CONSTANTENGINE</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

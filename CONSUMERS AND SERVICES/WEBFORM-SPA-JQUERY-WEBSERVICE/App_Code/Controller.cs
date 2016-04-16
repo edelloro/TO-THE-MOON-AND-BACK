@@ -31,18 +31,12 @@ namespace MoonAndBackCalculatorApplication.Controllers
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public CalculatorResultModel Calculate()
         {
-           
-
             constantModel model = new constantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine();
             CalculatorResultModel rc = null;
             rc = engine.Calculate();
             return new CalculatorResultModel(rc.PI, rc.CalculationTime);
-
         }
-
     }
-
-
 }

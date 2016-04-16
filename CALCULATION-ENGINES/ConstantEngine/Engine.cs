@@ -5,7 +5,7 @@ using System.Configuration;
 
 //   Bulk parameters
 
-//                                   Moon         Earth      Ratio (Moon/Earth)
+//                                     Moon         Earth      Ratio (Moon/Earth)
 //   Mass (1024 kg)                    0.07346       5.9724     0.0123    
 //   Volume (1010 km3)                 2.1958      108.321      0.0203
 //   Equatorial radius (km)	           1738.1        6378.1    0.2725      
@@ -33,14 +33,14 @@ namespace MoonAndBackCalculatorApplication.Engine
     public enum PI_ENGINE_TYPE
     {
          ArcTangentEngine,
-         DotNetEngine  ,  
+         DotNetEngine,  
          EgyptianPyramidEngine,
          GregoryLeibnizEngine,
          MonteCarlo2DEngine,
          MonteCarlo3DEngine
     }
 
-    // STRATEGY DESIGN PATTERN FREIGHT CALCULATION
+    // STRATEGY DESIGN PATTERN PYTHAGORUS CALCULATION
     public interface IconstantEngine
     {
         CalculatorResultModel Calculate();
@@ -258,7 +258,6 @@ namespace MoonAndBackCalculatorApplication.Engine
                 return;
             }
 
-
             //---------------------------------------
 
             double radiusTimesTwo = radius * 2;
@@ -267,6 +266,11 @@ namespace MoonAndBackCalculatorApplication.Engine
             {
                 for (int y = 0; y < radiusTimesTwo; y++)
                 {
+
+                    //%ToDo
+                    //OPTIMIZE:
+                    //X^2 Y^2 IS POSITIVE ABS NOT REQUIRED
+                    
                     if (Math.Sqrt(
                         (Math.Pow(Math.Abs(radius - x), 2) +
                          Math.Pow(Math.Abs(radius - y), 2)
@@ -293,24 +297,23 @@ namespace MoonAndBackCalculatorApplication.Engine
         // INSTEAD OF USING A 2D MODEL WE WILL USE A 3D MODEL
         // OF A SPHERE RADIUS R INSIDE A CUBE OR LENGTH 2R
 
-        // WE WILL USE A SIEVE OF POINTS AGAIN AND COUNT THOSE INSIDE AND OUTSIDE THE CIRCLE
+        // WE WILL USE A SIEVE OF POINTS AGAIN AND COUNT THOSE INSIDE AND OUTSIDE THE SPHERE
 
         // ENCLOSE A SPHERE INSIDE A CUBE WE WILL CHECK IF A SIEVE OF POINTS
         // IS EITHER INSIDE THE SPHERE OR OUTSIDE THE SPHERE THEN CALCULATE PI
-        // FROM THE RATIO (THIS COULD BE DONE WITH RANDOM X AND Y AS WELL) 
+        // FROM THE RATIO (THIS COULD BE DONE WITH RANDOM X Y AND Z AS WELL) 
 
         // SPHERE OF RADIUS R INSIDE A CUBE OF SIDE LENGTH 2 R
 
-        // SPHERE AREA = (4/3) * PI  R^3   = (4/3) PI R^3
-        // CUBE AREA   = 4 * R^2 * 2R      =    8     R^3
+        // SPHERE VOLUME = (4/3) * PI  R^3   = (4/3) PI R^3
+        // CUBE VOLUME   = 4 * R^2 * 2R      =    8     R^3
         // THEREFORE:
-        // SPHERE AREA / CUBE AREA = PI / 6
+        // SPHERE VOLUME / CUBE VOLUME = PI / 6
         // THEREFORE:
         // PI = RATIO * 6
 
-        // PI IS 6 TIMES THE RATIO OF THE AREA INSIDE OUTSIDE THE SPHERE 
-        // TO TOTAL AREA OF A CUBE WITH THE LARGEST CIRCLE IT CAN CONTAIN
-
+        // PI IS 6 TIMES THE RATIO OF THE VOLUME INSIDE OUTSIDE THE SPHERE 
+        // TO TOTAL VOLUME OF A CUBE WITH THE LARGEST CIRCLE IT CAN CONTAIN
 
         // THE ITERATION FIELD IS RELEVANT
         public CalculatorResultModel Calculate(Int64 precision)
@@ -338,7 +341,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         //BECAUSE 3D CALCULATIONS ITERATIONS MUST BE SMALLER
         public CalculatorResultModel Calculate()
         {
-            return this.Calculate(100);
+            return this.Calculate(100);  // X * Y * Z == 100 * 100 * 100 == O(n)^3
         }
 
         class MonteCarloCubicCalculate_Worker
@@ -362,9 +365,11 @@ namespace MoonAndBackCalculatorApplication.Engine
                     {
                         for (int z = 0; z < radiusTimesTwo; z++)
                         {
+
                             //%ToDo
                             //OPTIMIZE:
-                            //X^2 IS POSITIVE ABS NOT REQUIRED
+                            //X^2 Y^2 Z^2  IS POSITIVE ABS NOT REQUIRED
+
                             if (Math.Sqrt(
                                 (Math.Pow(Math.Abs(radius - x), 2) +
                                  Math.Pow(Math.Abs(radius - y), 2) + 
@@ -379,8 +384,6 @@ namespace MoonAndBackCalculatorApplication.Engine
                 }
             }
         }
-
-
     }
 
 

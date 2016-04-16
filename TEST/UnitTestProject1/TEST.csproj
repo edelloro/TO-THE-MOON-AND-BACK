@@ -50,13 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\ConstantEngine.csproj">
+    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\CONSTANTENGINE.csproj">
       <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
-      <Name>ConstantEngine</Name>
+      <Name>CONSTANTENGINE</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
