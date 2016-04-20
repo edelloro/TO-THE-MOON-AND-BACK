@@ -21,8 +21,11 @@
             data: '',
             headers: { "Content-Type": "application/json" }
     }).success(function (response) {
+
                 $scope.PI = response.PI;
                 $scope.CalculationTime = response.CalculationTime;
+                $scope.MoonVolume = response.MoonVolume;
+
             }).error(function (data, status, headers, config) {
                 $scope.PI = "ERROR";
                 $scope.CalculationTime = "ERROR ENCOUNTERED";
