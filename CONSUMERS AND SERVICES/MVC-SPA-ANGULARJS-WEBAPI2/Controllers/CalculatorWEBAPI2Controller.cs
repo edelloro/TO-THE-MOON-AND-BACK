@@ -22,8 +22,7 @@ namespace MoonAndBackCalculatorApplication.Controllers
             engine = model.GetconstantEngine();
             CalculatorResultModel rc = null;
             rc = engine.Calculate();
-            return new CalculatorResultModel(rc.PI , 
-                                             rc.CalculationTime);
+            return new CalculatorResultModel(rc.PI ,  rc.CalculationTime);
         }
 
       

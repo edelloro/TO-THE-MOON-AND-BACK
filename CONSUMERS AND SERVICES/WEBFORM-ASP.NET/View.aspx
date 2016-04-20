@@ -24,12 +24,13 @@
     <br />
     Volume of a Sphere = (4/3) PI R^3<br/>
     <br />
-    Radius of the Moon (10,917km) = (10,917,000m)<br/>
+    Radius of the Moon (1,737km) <br/>
     <br/>
-    <input type="button" runat="server" value="Calculate" id="btnCalculate" style="width:100px;"/>
+    <asp:Button ID="btnCalculate" runat="server" Text="Calculate" OnClick="btnCalculate_Click" Width="306px"/>
     <br />
     <br />
-    <div id="divResult" style="text-align:left;width:300px;margin-left:auto;margin-right:auto;" ></div><br /><br>
+    <asp:TextBox ID="txtResult" runat="server" BorderStyle="None" Height="122px" TextMode="MultiLine" Width="296px"></asp:TextBox>
+    <br /><br />
 </div>
 </form>
 </body>

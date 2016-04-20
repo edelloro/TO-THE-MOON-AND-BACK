@@ -22,7 +22,8 @@
                 dataType: 'json',
                 success: function (result) {
                     $("#divResult").html("PI: " + result.PI + "<br/>" +
-                                         "Elapsed time in milliseconds: (" + result.CalculationTime + ")");
+                                         "Elapsed time in milliseconds: (" + result.CalculationTime + ")" + "<br/>" + 
+                                         "Moon Volume: " + result.MoonVolume);
 
                 },
                 error: function (xhr, status, error) {

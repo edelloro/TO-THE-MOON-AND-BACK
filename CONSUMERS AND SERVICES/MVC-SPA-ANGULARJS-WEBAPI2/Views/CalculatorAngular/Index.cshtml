@@ -12,6 +12,7 @@
     myapp.controller('control', function ($scope, $http) {
     $scope.PI = "";
     $scope.CalculationTime = "";
+    $scope.MoonVolume = "";
     $scope.CallWebService = function () {
     $http({
             method: 'GET',
@@ -49,7 +50,8 @@
     <br/>
     <br/>
     The value of to use is PI: {{ PI }}<br />
-    Time to complete task in milliseconds: {{ CalculationTime }}
+    Time to complete task in milliseconds: {{ CalculationTime }}<br />
+    Moon Volume: {{ MoonVolume }}<br />
     <br>
     <br>
 </div>

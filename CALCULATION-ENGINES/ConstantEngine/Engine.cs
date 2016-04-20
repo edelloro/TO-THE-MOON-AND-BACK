@@ -219,7 +219,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         }
 
         public CalculatorResultModel Calculate() {
-          return this.Calculate(1000);
+            return this.Calculate(1000);  // X * Y  == 1000 * 1000 == O(n)^2
          }
    
           class MonteCarloCalculate_Worker
@@ -313,7 +313,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         // PI = RATIO * 6
 
         // PI IS 6 TIMES THE RATIO OF THE VOLUME INSIDE OUTSIDE THE SPHERE 
-        // TO TOTAL VOLUME OF A CUBE WITH THE LARGEST CIRCLE IT CAN CONTAIN
+        // TO TOTAL VOLUME OF A CUBE WITH THE LARGEST SPHERE IT CAN CONTAIN
 
         // THE ITERATION FIELD IS RELEVANT
         public CalculatorResultModel Calculate(Int64 precision)

@@ -22,7 +22,8 @@
                 success: function (result) {
                     var data = result.d;
                     $("#divResult").html("PI VALUE: "     + data.PI + "<br/>" +
-                                         "CALCULATION TIME: " + data.CalculationTime);
+                                         "CALCULATION TIME: " + data.CalculationTime + "<br/>" + 
+                                         "MOON VOLUME: " + data.MoonVolume );
 
                 },
 
