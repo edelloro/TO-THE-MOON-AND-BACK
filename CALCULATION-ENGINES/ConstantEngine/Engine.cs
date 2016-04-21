@@ -267,13 +267,10 @@ namespace MoonAndBackCalculatorApplication.Engine
                 for (int y = 0; y < radiusTimesTwo; y++)
                 {
 
-                    //%ToDo
-                    //OPTIMIZE:
-                    //X^2 Y^2 IS POSITIVE ABS NOT REQUIRED
-                    
+                     
                     if (Math.Sqrt(
-                        (Math.Pow(Math.Abs(radius - x), 2) +
-                         Math.Pow(Math.Abs(radius - y), 2)
+                        (Math.Pow((radius - x), 2) +
+                         Math.Pow((radius - y), 2)
                          ))
                          < radius)
                     { _inside++; }
@@ -366,14 +363,10 @@ namespace MoonAndBackCalculatorApplication.Engine
                         for (int z = 0; z < radiusTimesTwo; z++)
                         {
 
-                            //%ToDo
-                            //OPTIMIZE:
-                            //X^2 Y^2 Z^2  IS POSITIVE ABS NOT REQUIRED
-
                             if (Math.Sqrt(
-                                (Math.Pow(Math.Abs(radius - x), 2) +
-                                 Math.Pow(Math.Abs(radius - y), 2) + 
-                                 Math.Pow(Math.Abs(radius - z), 2)
+                                (Math.Pow((radius - x), 2) +
+                                 Math.Pow((radius - y), 2) + 
+                                 Math.Pow((radius - z), 2)
                                  ))
                                  < radius)
                             { _inside++; }
