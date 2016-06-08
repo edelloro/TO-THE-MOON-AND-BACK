@@ -36,6 +36,7 @@ namespace MoonAndBackCalculatorApplication.Engine
          DotNetEngine,  
          EgyptianPyramidEngine,
          GregoryLeibnizEngine,
+         NilakanthaEngine,      
          MonteCarlo2DEngine,
          MonteCarlo3DEngine
     }
@@ -169,6 +170,45 @@ namespace MoonAndBackCalculatorApplication.Engine
             return this.Calculate();
         }
 
+    }
+
+
+
+    public class NilakanthaEngine : IconstantEngine
+    {
+        //
+        // numerator:            4       4       4       4
+        //                3.0    +       -       +       -
+        // denominator:        2,3,4   4,5,6   6,7,8   8,9,10
+        //
+
+        public CalculatorResultModel Calculate(Int64 precision)
+        {
+            Stopwatch watch = Stopwatch.StartNew();
+
+            double pi_approx = 3.0d;
+
+            for (int i = 1; i < precision; i++)
+            {
+                int j = i * 2;               
+                if (i % 2 == 1)
+                {
+                    pi_approx += 4.0 / (j * (j + 1) * (j + 2));
+                } else {
+                    pi_approx -= 4.0 / (j * (j + 1) * (j + 2));        
+                }
+            }
+ 
+            watch.Stop();
+            double rtime = watch.ElapsedMilliseconds;
+            return new CalculatorResultModel(pi_approx, rtime);
+        }
+
+        public CalculatorResultModel Calculate()
+        {
+            return this.Calculate(1000);  
+        }
+   
     }
 
     public class MonteCarloEngine : IconstantEngine
@@ -401,7 +441,11 @@ namespace MoonAndBackCalculatorApplication.Engine
         {
             IconstantEngine constantEngine = null;
             switch (enginetype) {
- 
+
+                case PI_ENGINE_TYPE.NilakanthaEngine:
+                    constantEngine = new NilakanthaEngine();
+                    break;
+
                 case PI_ENGINE_TYPE.ArcTangentEngine :
                     constantEngine = new ArcTangentEngine();
                     break;

@@ -1,0 +1,4 @@
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\bin\Debug\CalculatorEngine.pdb
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.dll
+C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CALCULATION-ENGINES\ConstantEngine\obj\Debug\CalculatorEngine.pdb

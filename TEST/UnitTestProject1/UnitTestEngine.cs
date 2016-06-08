@@ -9,6 +9,23 @@ namespace UnitTestProjectEngineCalculator
     [TestClass]
     public class UnitTest_CalculatePI
     {
+
+
+        [TestMethod]
+        public void TestMethod_Nilakantha()
+        {
+            constantModel model = new constantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.NilakanthaEngine);
+            CalculatorResultModel rc = null;
+            rc = engine.Calculate(10000);
+            Assert.AreEqual(rc.PI, 3.14, 0.05, "INVALID NILAKANTHA CALCULATION");
+        }
+
+
+
+
+
         [TestMethod]
         public void TestMethod_MonteCarlo_1000()
         {
@@ -19,6 +36,10 @@ namespace UnitTestProjectEngineCalculator
             rc = engine.Calculate(1000);
             Assert.AreEqual(rc.PI, 3.14, 0.10, "INVALID MONTECARLO CALCULATION");
         }
+
+
+
+
 
         [TestMethod]
         public void TestMethod_MonteCarlo_10000()
