@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\ENGINE.csproj">
+    <ProjectReference Include="..\..\MODEL\MODEL.csproj">
       <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
-      <Name>ENGINE</Name>
+      <Name>MODEL</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
