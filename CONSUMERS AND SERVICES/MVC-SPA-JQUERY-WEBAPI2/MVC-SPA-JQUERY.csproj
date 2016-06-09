@@ -210,13 +210,13 @@
     <Content Include="Views\CalculatorJQuery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\ENGINE.csproj">
-      <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
-      <Name>ENGINE</Name>
-    </ProjectReference>
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <ProjectReference Include="..\..\MODEL\MODEL.csproj">
+      <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
