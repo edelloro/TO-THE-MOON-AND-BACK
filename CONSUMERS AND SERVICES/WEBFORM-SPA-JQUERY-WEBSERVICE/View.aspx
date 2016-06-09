@@ -4,48 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
 <script src="Scripts/jquery-2.2.1.min.js"></script>
-<script>
-    $(document).ready(function () {
+<script src="Scripts/code-jquery.js"></script>
 
-        //BUTTON CLICK TO CALL THE WEB SERVICE
-        $(":button").click(function () {
-
-            var urlRequest = "/Controller.asmx/Calculate";
-
-            $.ajax({
-                url: urlRequest,
-                type: "POST",
-                dataType: 'json',                
-                contentType: "application/json; charset=utf-8",
-                data: "{}",
-                success: function (result) {
-                    var data = result.d;
-                    $("#divResult").html("PI VALUE: "     + data.PI + "<br/>" +
-                                         "CALCULATION TIME: " + data.CalculationTime + "<br/>" + 
-                                         "MOON VOLUME: " + data.MoonVolume );
-
-                },
-
-                error: function (xhr, status, error) {
-                    alert("error");
-                    var err = eval("(" + xhr.responseText + ")");
-                    $("#divResult").html(err.Message)
-                }
-            });
-        });
-    });
-</script>
-
-
-<title>JQuery Moon Volume Calculator</title>
+<title>JQuery WebService Moon Volume Calculator</title>
 </head>
 <body>
-<form id="form1" runat="server">   
-   
-        
-        
-    
+       
 <div style="text-align:center;width:800px;margin-left:auto;margin-right:auto;" >
    
     <br />
@@ -63,7 +29,7 @@
     <br />
     <div id="divResult" style="text-align:left;width:300px;margin-left:auto;margin-right:auto;" ></div><br /><br>
 
-</div>
-</form>
+    </div>
+
 </body>
 </html>
