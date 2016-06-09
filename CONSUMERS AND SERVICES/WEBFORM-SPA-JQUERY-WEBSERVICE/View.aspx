@@ -38,7 +38,7 @@
 </script>
 
 
-<title>JQuery Simple constant Calculator</title>
+<title>JQuery Moon Volume Calculator</title>
 </head>
 <body>
 <form id="form1" runat="server">   
