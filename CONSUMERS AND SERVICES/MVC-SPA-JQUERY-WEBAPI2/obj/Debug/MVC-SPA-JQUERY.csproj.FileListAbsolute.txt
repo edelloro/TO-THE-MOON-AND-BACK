@@ -255,6 +255,5 @@ C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\bin\System.Web.Http.Owin.xml
-C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\obj\Debug\MVC-SPA-JQUERY.csprojResolveAssemblyReference.cache
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\obj\Debug\WebApplication11.dll
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-SPA-JQUERY-WEBAPI2\obj\Debug\WebApplication11.pdb

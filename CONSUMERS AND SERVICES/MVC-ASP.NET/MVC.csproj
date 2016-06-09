@@ -209,15 +209,14 @@
     <Content Include="Views\Calculator\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CALCULATION-ENGINES\ConstantEngine\ENGINE.csproj">
-      <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
-      <Name>ENGINE</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\MODEL\MODEL.csproj">
+      <Project>{7d49c273-15e2-453a-a63a-43a98cfef799}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -317,6 +317,5 @@ C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\bin\System.Web.Http.Owin.xml
-C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\obj\Debug\MVC.csprojResolveAssemblyReference.cache
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\obj\Debug\WebApplication11.dll
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\CONSUMERS AND SERVICES\MVC-ASP.NET\obj\Debug\WebApplication11.pdb
