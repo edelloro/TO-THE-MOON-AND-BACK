@@ -5,7 +5,8 @@ using System.Web.Mvc;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using MoonAndBackCalculatorApplication.Engine;
+using MoonAndBackCalculatorApplication.ConstantEngine;
+using MoonAndBackCalculatorApplication.Model;
 
 
 
@@ -15,14 +16,14 @@ namespace MoonAndBackCalculatorApplication.Controllers
     {
 
         // WEBAPI2 HAS METHOD SIGNATURE ROUTING
-        public  CalculatorResultModel Get()
+        public  CalculatorResult Get()
         {
             constantModel model = new constantModel() ;
             IconstantEngine engine = null;
             engine = model.GetconstantEngine();
-            CalculatorResultModel rc = null;
+            CalculatorResult rc = null;
             rc = engine.Calculate();
-            return new CalculatorResultModel(rc.PI ,  rc.CalculationTime);
+            return new CalculatorResult(rc.PI ,  rc.CalculationTime);
         }
 
       

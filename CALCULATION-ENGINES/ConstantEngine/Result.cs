@@ -5,10 +5,10 @@ using System.Web;
 
 // 1,737km Moon Radius
 
-namespace MoonAndBackCalculatorApplication.Engine
+namespace MoonAndBackCalculatorApplication.Model
 {
     // RESULT OBJECT FOR SENDING BACK
-    public class CalculatorResultModel
+    public class CalculatorResult
     {
         double _pi_constant  = 0d;
         double _time_elapsed = 0d;
@@ -48,12 +48,12 @@ namespace MoonAndBackCalculatorApplication.Engine
         }
 
       
-        public CalculatorResultModel()
+        public CalculatorResult()
         {
 
         }
 
-        public CalculatorResultModel(double pi , double time  )
+        public CalculatorResult(double pi , double time  )
         {
 
             _pi_constant  = pi;

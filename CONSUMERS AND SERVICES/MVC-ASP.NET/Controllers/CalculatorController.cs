@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MoonAndBackCalculatorApplication.Engine;
+using MoonAndBackCalculatorApplication.ConstantEngine;
+using MoonAndBackCalculatorApplication.Model;
 
 
 
@@ -20,13 +21,13 @@ namespace MoonAndBackCalculatorApplication.Controllers
                 constantModel model = new constantModel() ;
                 IconstantEngine engine = null;
                 engine = model.GetconstantEngine();
-                CalculatorResultModel rc = null;
+                CalculatorResult rc = null;
                 rc = engine.Calculate();
-                return View(new CalculatorResultModel(rc.PI, rc.CalculationTime));
+                return View(new CalculatorResult(rc.PI, rc.CalculationTime));
             }
             else
             {
-                return View(new CalculatorResultModel());
+                return View(new CalculatorResult());
             }
 
         }

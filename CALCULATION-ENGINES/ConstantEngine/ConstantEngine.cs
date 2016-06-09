@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Configuration;
+using MoonAndBackCalculatorApplication.Model;
+
 
 //   Bulk parameters
 
@@ -20,14 +22,14 @@ using System.Configuration;
 //   Bond albedo                       0.11          0.306      0.360
 //   Visual geometric albedo           0.12          0.367      0.330    
 //   Visual magnitude V(1,0)          +0.21         -3.86          -
-//   Solar irradiance (W/m2)            1361.0        1361.0    1.000      
-//   Black-body temperature (K)          270.4         254.0    1.065      
-//   Topographic range (km)               20            20      1.000      
+//   Solar irradiance (W/m2)        1361.0        1361.0    1.000      
+//   Black-body temperature (K)      270.4         254.0    1.065      
+//   Topographic range (km)           20            20      1.000      
 //   Moment of inertia (I/MR2)         0.394         0.3308     1.191
 //   J2 (x 10-6)                     202.7        1082.63        0.187  
 
 
-namespace MoonAndBackCalculatorApplication.Engine
+namespace MoonAndBackCalculatorApplication.ConstantEngine
 {
 
     public enum PI_ENGINE_TYPE
@@ -44,23 +46,23 @@ namespace MoonAndBackCalculatorApplication.Engine
     // STRATEGY DESIGN PATTERN PYTHAGORUS CALCULATION
     public interface IconstantEngine
     {
-        CalculatorResultModel Calculate();
-        CalculatorResultModel Calculate(Int64 precision);
+        CalculatorResult Calculate();
+        CalculatorResult Calculate(Int64 precision);
     }
 
     public class DotNetEngine : IconstantEngine
     {
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             Stopwatch watch = Stopwatch.StartNew();
             double rcode = System.Math.PI;
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(rcode, rtime);
+            return new CalculatorResult(rcode, rtime);
         }
 
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             return this.Calculate();
         }
@@ -73,16 +75,16 @@ namespace MoonAndBackCalculatorApplication.Engine
         // PYRAMID ENGINEERS DOING MANUAL CALCULATIONS SOMETIMES USED THESE FRACTIONS
 
         
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             Stopwatch watch = Stopwatch.StartNew();
             double rcode = 245850922.0d / 78256779.0d;
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(rcode, rtime);
+            return new CalculatorResult(rcode, rtime);
         }
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             return this.Calculate();
         }
@@ -97,12 +99,12 @@ namespace MoonAndBackCalculatorApplication.Engine
 
 
         //THE ITERATION FIELD SET TO 100 MILLION BY DEFAULT
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             return this.Calculate(100 * 1000000);
         }
        
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -127,7 +129,7 @@ namespace MoonAndBackCalculatorApplication.Engine
             } //FOR LOOP
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(pi_approx, rtime);
+            return new CalculatorResult(pi_approx, rtime);
         }
     }
 
@@ -156,23 +158,21 @@ namespace MoonAndBackCalculatorApplication.Engine
         // Look at the 3-4-5 right triangle. The two acute angles add to pi/2, i.e. to 90 degrees. One of the acute angles is arctan(3/4). The other acute angle is arctan(4/3). Done. 
         // PI = 4 ARTAN (1)
 
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             Stopwatch watch = Stopwatch.StartNew();
             double rcode = 4.0 * System.Math.Atan( 1 ) ;
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(rcode, rtime);
+            return new CalculatorResult(rcode, rtime);
         }
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             return this.Calculate();
         }
 
     }
-
-
 
     public class NilakanthaEngine : IconstantEngine
     {
@@ -182,7 +182,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         // denominator:        2,3,4   4,5,6   6,7,8   8,9,10
         //
 
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -201,10 +201,10 @@ namespace MoonAndBackCalculatorApplication.Engine
  
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(pi_approx, rtime);
+            return new CalculatorResult(pi_approx, rtime);
         }
 
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             return this.Calculate(1000);  
         }
@@ -236,7 +236,7 @@ namespace MoonAndBackCalculatorApplication.Engine
 
 
         // THE ITERATION FIELD IS RELEVANT
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
             double pi_approx = 0d;
@@ -255,10 +255,10 @@ namespace MoonAndBackCalculatorApplication.Engine
             pi_approx = 4.0d * (ratioInOut);
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(pi_approx, rtime);
+            return new CalculatorResult(pi_approx, rtime);
         }
 
-        public CalculatorResultModel Calculate() {
+        public CalculatorResult Calculate() {
             return this.Calculate(1000);  // X * Y  == 1000 * 1000 == O(n)^2
          }
    
@@ -322,12 +322,6 @@ namespace MoonAndBackCalculatorApplication.Engine
     }
     }
 
-
-
-
-
-
-
     public class MonteCarloCubicEngine : IconstantEngine
     {
         // THIS IS AN EXTENSION OF THE PREVIOUS MONTE CARLO ENGINE
@@ -353,7 +347,7 @@ namespace MoonAndBackCalculatorApplication.Engine
         // TO TOTAL VOLUME OF A CUBE WITH THE LARGEST SPHERE IT CAN CONTAIN
 
         // THE ITERATION FIELD IS RELEVANT
-        public CalculatorResultModel Calculate(Int64 precision)
+        public CalculatorResult Calculate(Int64 precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
             double pi_approx = 0d;
@@ -372,11 +366,11 @@ namespace MoonAndBackCalculatorApplication.Engine
             pi_approx = 6.0d * (ratioInOut);
             watch.Stop();
             double rtime = watch.ElapsedMilliseconds;
-            return new CalculatorResultModel(pi_approx, rtime);
+            return new CalculatorResult(pi_approx, rtime);
         }
 
         //BECAUSE 3D CALCULATIONS ITERATIONS MUST BE SMALLER
-        public CalculatorResultModel Calculate()
+        public CalculatorResult Calculate()
         {
             return this.Calculate(100);  // X * Y * Z == 100 * 100 * 100 == O(n)^3
         }
@@ -419,12 +413,6 @@ namespace MoonAndBackCalculatorApplication.Engine
         }
     }
 
-
-
-
-
-
-
     public class constantModel
     {
         // THE REQUESTOR OF THE ENGINE USED DETERMINES THE ALGORITHM 
@@ -437,7 +425,7 @@ namespace MoonAndBackCalculatorApplication.Engine
             return constantEngine;
         }
         
-         public IconstantEngine GetconstantEngine(PI_ENGINE_TYPE enginetype)
+        public IconstantEngine GetconstantEngine(PI_ENGINE_TYPE enginetype)
         {
             IconstantEngine constantEngine = null;
             switch (enginetype) {
