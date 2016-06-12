@@ -5,7 +5,7 @@ using System.Configuration;
 using MoonAndBackCalculatorApplication.Model;
 
 
-//   Bulk parameters
+//   BULK PARAMETERS
 
 //                                     Moon         Earth      Ratio (Moon/Earth)
 //   Mass (1024 kg)                    0.07346       5.9724     0.0123    
@@ -40,14 +40,14 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
          GregoryLeibnizEngine,
          NilakanthaEngine,      
          MonteCarlo2DEngine,
-         MonteCarlo3DEngine
+         MonteCarlo3DEngine,
     }
 
     // STRATEGY DESIGN PATTERN PYTHAGORUS CALCULATION
     public interface IconstantEngine
     {
         CalculatorResult Calculate();
-        CalculatorResult Calculate(Int64 precision);
+        CalculatorResult Calculate(int precision);
     }
 
     public class DotNetEngine : IconstantEngine
@@ -62,7 +62,7 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         }
 
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             return this.Calculate();
         }
@@ -73,8 +73,7 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         // PI CAN BE REPRESENTED AS THE FOLLOWING FRACTIONS
         // (22/7) (333/106) (355/113) (52163/16604) (103993/33102) (245850922/78256779)
         // PYRAMID ENGINEERS DOING MANUAL CALCULATIONS SOMETIMES USED THESE FRACTIONS
-
-        
+      
         public CalculatorResult Calculate()
         {
             Stopwatch watch = Stopwatch.StartNew();
@@ -92,7 +91,7 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
 
     public class GregoryLeibnizEngine : IconstantEngine
     {
-        // INFINITE SERIES
+        // INFINITE SERIES [SLOWER CONVERGENCE]
         // PI = 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + 4/13 + ...
 
         enum PIOPERATOR { PLUS, MINUS };
@@ -104,7 +103,7 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
             return this.Calculate(100 * 1000000);
         }
        
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -153,8 +152,6 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         // Arctan(x) finds one of the angles, 
         // Arctan(1/x) finds the other. 
         //
-        // Reference 
-        // https://www.physicsforums.com/threads/most-elegant-proof-of-arctan-x-arctan-1-x.143695/
         // Look at the 3-4-5 right triangle. The two acute angles add to pi/2, i.e. to 90 degrees. One of the acute angles is arctan(3/4). The other acute angle is arctan(4/3). Done. 
         // PI = 4 ARTAN (1)
 
@@ -167,7 +164,7 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
             return new CalculatorResult(rcode, rtime);
         }
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             return this.Calculate();
         }
@@ -179,10 +176,10 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         //
         // numerator:            4       4       4       4
         //                3.0    +       -       +       -
-        // denominator:        2,3,4   4,5,6   6,7,8   8,9,10
+        // denominator:        2*3*4   4*5*6   6*7*8   8*9*10
         //
 
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
 
@@ -236,11 +233,11 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
 
 
         // THE ITERATION FIELD IS RELEVANT
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
             double pi_approx = 0d;
-            double radius = precision;
+            int radius = precision;
 
             Int64 inside = 0;
             Int64 outside = 0;
@@ -277,28 +274,19 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         //   10000.0d , 314159017   , 85840983   ,
         //  100000.0d , 31415925413 , 8584074587
               
-        public MonteCarloCalculate_Worker(double radius)
+        public MonteCarloCalculate_Worker(int radius)
         {
-            //---------------------------------------
-            //HARD CODED CACHING DETERMINISTIC RESULT
-            //SHOULD BE STORED IN SOME FORM OF REPOSITORY       
-            //---------------------------------------
-            
-            if (radius == 10000.0d)
-            {
-                _inside = 314159017;
-                _outside = 85840983;
+
+            //HAVE A DICTIONARY CACHE FOR PRECOMPUTED RESULTS
+            Dictionary<int , List<long >> dict = new Dictionary<int ,List<long>>();
+            dict.Add(   10000, new List<long> {   314159017,   85840983 });
+            dict.Add(  100000, new List<long> { 31415925413, 8584074587 });
+            if (dict.ContainsKey(radius)) {
+                _inside = dict[radius][0];
+                _outside = dict[radius][1];
                 return;
             }
 
-            if (radius == 100000.0d)
-            {
-                _inside = 31415925413;
-                _outside = 8584074587;
-                return;
-            }
-
-            //---------------------------------------
 
             double radiusTimesTwo = radius * 2;
 
@@ -306,8 +294,6 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
             {
                 for (int y = 0; y < radiusTimesTwo; y++)
                 {
-
-                     
                     if (Math.Sqrt(
                         (Math.Pow((radius - x), 2) +
                          Math.Pow((radius - y), 2)
@@ -347,11 +333,11 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         // TO TOTAL VOLUME OF A CUBE WITH THE LARGEST SPHERE IT CAN CONTAIN
 
         // THE ITERATION FIELD IS RELEVANT
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             Stopwatch watch = Stopwatch.StartNew();
             double pi_approx = 0d;
-            double radius = precision;
+            int radius = precision;
 
             Int64 inside = 0;
             Int64 outside = 0;
@@ -385,18 +371,15 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
 
             //CONSTRUCTOR
 
-            public MonteCarloCubicCalculate_Worker(double radius)
+            public MonteCarloCubicCalculate_Worker(int radius)
             {
-               
                 double radiusTimesTwo = radius * 2;
-
                 for (int x = 0; x < radiusTimesTwo; x++)
                 {
                     for (int y = 0; y < radiusTimesTwo; y++)
                     {
                         for (int z = 0; z < radiusTimesTwo; z++)
                         {
-
                             if (Math.Sqrt(
                                 (Math.Pow((radius - x), 2) +
                                  Math.Pow((radius - y), 2) + 
