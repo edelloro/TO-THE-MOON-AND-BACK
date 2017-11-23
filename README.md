@@ -11,12 +11,13 @@ WebAPI2
 Design Patterns in C#
 Problem Solving methodologies
 
-
 Synopsis of Problem:
 
 Interview Question
 
-Calculate the fuel required to travel to the moon an back for a spaceship with
-payload the size of a car. Use as many calculations of your own as possible.
+Calculate the fuel required to travel to the moon an back for a spaceship 
+the size of a car. 
+
+Use as many calculations of your own as possible.
    
 
