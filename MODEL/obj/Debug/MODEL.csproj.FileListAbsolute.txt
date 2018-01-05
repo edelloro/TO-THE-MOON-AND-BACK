@@ -3,3 +3,8 @@ C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\MODEL\bin\Debug\CalculatorE
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\MODEL\obj\Debug\MODEL.csprojResolveAssemblyReference.cache
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\MODEL\obj\Debug\CalculatorEngine.dll
 C:\Users\ericd\Documents\GitHub\to-the-moon-and-back\MODEL\obj\Debug\CalculatorEngine.pdb
+C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\obj\Debug\MODEL.csproj.CoreCompileInputs.cache
+C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\obj\Debug\CalculatorEngine.dll
+C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\obj\Debug\CalculatorEngine.pdb
+C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\bin\Debug\CalculatorEngine.dll
+C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\bin\Debug\CalculatorEngine.pdb

@@ -12,5 +12,3 @@ WebAPI2
 Synopsis of Problem:
 
 Write a program to calculate the volume of the moon in as many ways as possible.
-
-
