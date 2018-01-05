@@ -83,10 +83,12 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
             return new CalculatorResult(rcode, rtime);
         }
         //THE ITERATION FIELD IS IGNORED
-        public CalculatorResult Calculate(Int64 precision)
+        public CalculatorResult Calculate(int precision)
         {
             return this.Calculate();
         }
+
+       
     }
 
     public class GregoryLeibnizEngine : IconstantEngine
