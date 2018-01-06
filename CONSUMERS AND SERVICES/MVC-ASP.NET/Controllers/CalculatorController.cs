@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MoonAndBackCalculatorApplication.ConstantEngine;
+
 using MoonAndBackCalculatorApplication.Model;
 
 
@@ -18,7 +19,7 @@ namespace MoonAndBackCalculatorApplication.Controllers
         {
            
             if (btnCalculate == "Calculate") { 
-                constantModel model = new constantModel() ;
+                ConstantModel model = new ConstantModel() ;
                 IconstantEngine engine = null;
                 engine = model.GetconstantEngine();
                 CalculatorResult rc = null;

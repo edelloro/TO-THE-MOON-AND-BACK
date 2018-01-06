@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="CalculationEngine.cs" />
     <Compile Include="ConstantEngine.cs" />
+    <Compile Include="ConstantModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />
   </ItemGroup>

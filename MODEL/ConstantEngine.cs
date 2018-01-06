@@ -41,6 +41,8 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
          NilakanthaEngine,      
          MonteCarlo2DEngine,
          MonteCarlo3DEngine,
+         Triangle2DEngine,
+         Triangle3DEngine
     }
 
     // STRATEGY DESIGN PATTERN PYTHAGORUS CALCULATION
@@ -398,57 +400,82 @@ namespace MoonAndBackCalculatorApplication.ConstantEngine
         }
     }
 
-    public class constantModel
+    public class TriangleEngine2D : IconstantEngine
     {
-        // THE REQUESTOR OF THE ENGINE USED DETERMINES THE ALGORITHM 
-        // USED STRATEGY DESIGN PATTERN
 
-        public IconstantEngine GetconstantEngine()
+        // THE TRIANGLE ENGINE 2D APPROXIMATES THE AREA OF A CIRCLE BY PLACING 
+        // A NUMBER OF ISOSCELES TRIANGLES INSIDE THE CIRCLE FROM THE CENTROID OF THE CIRCLE
+        // AND THEN CALCULATING THE AREA OF EACH TRIANGLE TO APPROXIMATE THE AREA OF THE CIRCLE
+
+        // THE SMALLEST TRIANGLE CALCULATION SEQUENCE FROM THE CENTRE OF THE CIRCLE CONSISTS
+        // OF THREE TRIANGLES WITH EQUALLATERAL SIDES EACH OF SIZE [R] AND SEPERATED
+        // BY AN ANGLE OF 360 / 3 = 120 DEGREES. IT PERFORMS A POOR APPROXIMATION OF PI
+
+        // THE NEXT AREA CALCULATION CONSISTS OF PLACING A SQUARE INSIDE THE CIRCLE 
+        // TO CALCULATE PI THE ANGLES OF THIS ARE 360 / 4 = 90 DEGREES. AS OUR SHAPE INSIDE
+        // THE CIRCLE HAS MORE SIDES IT BECOMES A BETTER APPROXIMATION OF THE AREA OF THE
+        // CIRCLE AND WE BUILD A BETTER APPROXIMATION OF PI
+
+
+
+        public CalculatorResult Calculate()
         {
-            IconstantEngine constantEngine = null;
-            constantEngine = new DotNetEngine();
-            return constantEngine;
+            //default to a circular concave shape with 100 sides
+            return Triangle2D_Worker(500);
         }
-        
-        public IconstantEngine GetconstantEngine(PI_ENGINE_TYPE enginetype)
+
+        public CalculatorResult Calculate(int precision)
         {
-            IconstantEngine constantEngine = null;
-            switch (enginetype) {
+            return Triangle2D_Worker(precision);
+        }
 
-                case PI_ENGINE_TYPE.NilakanthaEngine:
-                    constantEngine = new NilakanthaEngine();
-                    break;
+        private CalculatorResult Triangle2D_Worker(int precision)
+        {
 
-                case PI_ENGINE_TYPE.ArcTangentEngine :
-                    constantEngine = new ArcTangentEngine();
-                    break;
+            Stopwatch watch = Stopwatch.StartNew();
+            
+            double radius = 500.0d;
+            double radius_squared = radius * radius;
+            double area = 0.0d;
+            double degrees_to_radians = (Math.PI / 180.0d);
+            double angle = (360.0d / (double) precision) * degrees_to_radians;
 
-                case PI_ENGINE_TYPE.DotNetEngine : 
-                    constantEngine = new DotNetEngine();
-                    break;
-
-                 case PI_ENGINE_TYPE.EgyptianPyramidEngine:
-                    constantEngine = new EgyptianPyramidEngine();
-                    break;
-
-                case PI_ENGINE_TYPE.GregoryLeibnizEngine: 
-                    constantEngine = new GregoryLeibnizEngine();
-                    break;
-
-                case PI_ENGINE_TYPE.MonteCarlo2DEngine:
-                    constantEngine = new MonteCarloEngine();
-                    break;
-
-                case PI_ENGINE_TYPE.MonteCarlo3DEngine:
-                    constantEngine = new MonteCarloCubicEngine();
-                    break;
-           
-                default:
-                    constantEngine = new DotNetEngine();
-                    break;
+            for (int i = 0; i < precision; i++)
+            {
+                //AREA OF AN ISOSCELES TRIANGLE
+                area += 0.5 * radius_squared * Math.Sin( angle );
             }
-            return constantEngine;
+
+            // AREA OF CIRCLE = PI * R ^ 2
+
+            // PI = AREA / ( R ^2 )
+
+            CalculatorResult rc = new CalculatorResult();
+
+            double pi_calculated = area / (radius * radius);
+
+            double elapsed_time = watch.ElapsedMilliseconds;
+
+            return new CalculatorResult( pi_calculated, elapsed_time);
         }
     }
+
+
+
+
+
+    public class TriangleEngine3D : IconstantEngine
+    {
+        public CalculatorResult Calculate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public CalculatorResult Calculate(int precision)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 }
 

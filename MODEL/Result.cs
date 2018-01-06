@@ -18,7 +18,7 @@ namespace MoonAndBackCalculatorApplication.Model
         public double PI
         {
             get { return _pi_constant; }
-            set { _time_elapsed = value; }
+            set { _pi_constant = value; }
         }
 
         public double CalculationTime
@@ -48,22 +48,16 @@ namespace MoonAndBackCalculatorApplication.Model
         }
 
       
-        public CalculatorResult()
-        {
+        public CalculatorResult() { }
 
-        }
-
-        public CalculatorResult(double pi , double time  )
+        public CalculatorResult(double pi , double elapsed_time  )
         {
 
             _pi_constant  = pi;
-            _time_elapsed = time;
+            _time_elapsed = elapsed_time;
           
-        }
-
-      
+        }    
     }
-
 }
 
 

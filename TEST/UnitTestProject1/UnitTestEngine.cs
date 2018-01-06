@@ -15,7 +15,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_Nilakantha()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.NilakanthaEngine);
             CalculatorResult rc = null;
@@ -27,7 +27,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_MonteCarlo_1000()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo2DEngine);
             CalculatorResult rc = null;
@@ -39,7 +39,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_MonteCarlo_10000()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo2DEngine);
             CalculatorResult rc = null;
@@ -51,7 +51,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_MonteCarlo3D_100()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.MonteCarlo3DEngine);
             CalculatorResult rc = null;
@@ -63,7 +63,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_DotNet()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.DotNetEngine);
             CalculatorResult rc = null;
@@ -75,7 +75,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_EgyptianPyramid()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.EgyptianPyramidEngine);
             CalculatorResult rc = null;
@@ -87,7 +87,7 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_ArcTangent()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.ArcTangentEngine);
             CalculatorResult rc = null;
@@ -99,12 +99,27 @@ namespace UnitTestProjectEngineCalculator
         [TestMethod]
         public void TestMethod_GregoryLeibniz_HundredMillionCalc()
         {
-            constantModel model = new constantModel();
+            ConstantModel model = new ConstantModel();
             IconstantEngine engine = null;
             engine = model.GetconstantEngine(PI_ENGINE_TYPE.GregoryLeibnizEngine);
             CalculatorResult rc = null;
             rc = engine.Calculate(1000000*10);
             Assert.AreEqual(rc.PI, 3.14, 0.005, "INVALID GREGORY-LEIBNIZ CALCULATION");
-        }    
+        }
+
+
+
+        [TestMethod]
+        public void TestMethod_Pyramid2DEngine()
+        {
+            ConstantModel model = new ConstantModel();
+            IconstantEngine engine = null;
+            engine = model.GetconstantEngine(PI_ENGINE_TYPE.Triangle2DEngine);
+            //engine = model.GetconstantEngine(PI_ENGINE_TYPE.GregoryLeibnizEngine);
+            CalculatorResult rc = null;
+            rc = engine.Calculate(1000);
+            Assert.AreEqual(rc.PI, 3.14, 0.10, "INVALID PYRAMID2D CALCULATION");
+        }
+
     }
 }

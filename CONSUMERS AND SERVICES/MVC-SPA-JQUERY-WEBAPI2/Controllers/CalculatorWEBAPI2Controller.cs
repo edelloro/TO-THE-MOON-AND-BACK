@@ -18,7 +18,7 @@ namespace MoonAndBackCalculatorApplication.Controllers
         // WEBAPI2 HAS METHOD SIGNATURE ROUTING
         public  CalculatorResult Get()
         {
-            constantModel model = new constantModel() ;
+            ConstantModel model = new ConstantModel() ;
             IconstantEngine engine = null;
             engine = model.GetconstantEngine( );
             CalculatorResult rc = null;
