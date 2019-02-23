@@ -14,3 +14,13 @@ C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\TEST\UnitTestProjec
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\TEST.csproj.CoreCompileInputs.cache
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\bin\Debug\CalculatorEngine.dll
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\bin\Debug\CalculatorEngine.pdb
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\obj\Debug\TEST.csprojAssemblyReference.cache
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\obj\Debug\TEST.csproj.CoreCompileInputs.cache
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\obj\Debug\TEST.csproj.CopyComplete
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\github\Documents\GitHub\moon\TEST\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

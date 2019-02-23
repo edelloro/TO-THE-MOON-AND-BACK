@@ -8,3 +8,8 @@ C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\obj\Debug\Cal
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\obj\Debug\CalculatorEngine.pdb
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\bin\Debug\CalculatorEngine.dll
 C:\Users\Hewlett Packard\Desktop\GitHub\to-the-moon-and-back\MODEL\bin\Debug\CalculatorEngine.pdb
+C:\github\Documents\GitHub\moon\MODEL\bin\Debug\CalculatorEngine.dll
+C:\github\Documents\GitHub\moon\MODEL\bin\Debug\CalculatorEngine.pdb
+C:\github\Documents\GitHub\moon\MODEL\obj\Debug\MODEL.csproj.CoreCompileInputs.cache
+C:\github\Documents\GitHub\moon\MODEL\obj\Debug\CalculatorEngine.dll
+C:\github\Documents\GitHub\moon\MODEL\obj\Debug\CalculatorEngine.pdb
